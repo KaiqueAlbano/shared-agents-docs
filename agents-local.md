@@ -12,12 +12,14 @@ Leia nesta ordem:
 
 1. `docs-shared/arquitetura.md`
 2. `docs-shared/manutencao.md`
-3. arquivo da stack usada em `docs-shared/`
-4. arquivos locais do projeto, quando existirem
+3. `regras-negocio.md`
+4. arquivo da stack usada em `docs-shared/`
+5. arquivos locais do projeto, quando existirem
 
 Regras:
 
 - `docs-shared/arquitetura.md` e `docs-shared/manutencao.md` sao obrigatorios.
+- `regras-negocio.md` e obrigatorio neste repositorio.
 - `docs-shared/` define o padrao global.
 - Os arquivos locais do projeto definem contexto especifico.
 - Em caso de conflito, a regra local prevalece neste repositorio.
