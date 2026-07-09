@@ -40,3 +40,7 @@ cd ..
 git add docs-shared
 git commit -m "Atualiza shared-agents-docs"
 ```
+
+## Regras de Negocio Pessoal
+
+Use com o nome `regras-negocio.md` no agents-local.md ja faz referência para esse arquivo.
