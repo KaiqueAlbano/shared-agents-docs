@@ -1,33 +1,15 @@
 # Flutter
 
-## Objetivo
-
-Usar este guia para implementacao e revisao de telas, fluxos e componentes em Flutter e Dart.
-
-## Checklist de pre-implementacao
+## Implementacao especifica
 
 - Identificar widgets necessarios.
-- Definir estado da tela.
-- Escolher gerenciamento de estado apropriado.
-- Revisar responsividade.
-- Revisar comportamento mobile.
-- Avaliar performance.
-- Planejar navegacao.
-- Planejar validacoes.
+- Definir estado da tela e gerenciamento de estado adequado.
+- Planejar navegacao e comportamento mobile.
 - Cobrir `loading`, tratamento de erro e `empty state`.
-- Revisar acessibilidade.
+- Revisar risco de rebuilds desnecessarios.
+- Manter separacao clara entre UI e logica.
 
-## Diretrizes de implementacao
-
-Antes de implementar, analisar:
-
-- arquitetura da tela;
-- risco de rebuilds desnecessarios;
-- separacao entre UI e logica;
-- possibilidade de reutilizacao;
-- impacto em manutencao futura.
-
-## Code review
+## Revisao especifica
 
 Ao revisar codigo Flutter, procurar:
 
@@ -38,12 +20,4 @@ Ao revisar codigo Flutter, procurar:
 - gerenciamento de estado confuso;
 - navegacao acoplada;
 - falta de responsividade;
-- problemas de performance;
-- codigo duplicado;
 - tratamento de erro fraco.
-
-## Seguranca e performance
-
-- Nao expor segredos no app.
-- Validar fluxos sensiveis e persistencia local.
-- Reduzir rebuilds e manter a interface previsivel.

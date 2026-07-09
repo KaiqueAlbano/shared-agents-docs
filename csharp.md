@@ -1,28 +1,8 @@
 # C# e .NET
 
-## Objetivo
+## Particularidades de arquitetura
 
-Usar este guia para implementacao, revisao e explicacao de codigo em .NET e C#.
-
-## Checklist de pre-implementacao
-
-- Verificar controller necessario.
-- Verificar service necessario.
-- Verificar repository necessario.
-- Mapear DTOs e entities envolvidos.
-- Validar autenticacao e autorizacao.
-- Avaliar impacto no banco.
-- Avaliar impacto em testes.
-- Avaliar risco de regressao.
-
-## Build, teste e deploy
-
-- Verificar `global.json` e a versao do SDK.
-- Rodar restore, build e testes automatizados da solucao quando existirem.
-- Checar migrations em `.db/<schema>/migrations`.
-- Nao executar publicacao sem autorizacao explicita.
-
-## Fluxo arquitetural recomendado
+Fluxo recomendado:
 
 Request
 -> Controller
@@ -31,20 +11,17 @@ Request
 -> Banco
 -> Response
 
-## Diretrizes de implementacao
+## Implementacao especifica
 
-Antes de implementar, analisar:
+- Verificar controller, service e repository necessarios.
+- Mapear DTOs e entities envolvidos.
+- Validar autenticacao e autorizacao da API.
+- Verificar `global.json` e a versao do SDK.
+- Checar migrations em `.db/<schema>/migrations` quando houver impacto de banco.
+- Preferir uso correto de `CancellationToken`.
+- Garantir uso correto de `async/await`.
 
-- validacoes;
-- logs;
-- tratamento de erros;
-- responsabilidade de cada camada;
-- risco de acoplamento;
-- possibilidade de reutilizacao.
-
-Depois dividir a implementacao em etapas pequenas.
-
-## Code review
+## Revisao especifica
 
 Ao revisar codigo .NET, procurar:
 
@@ -57,15 +34,3 @@ Ao revisar codigo .NET, procurar:
 - falta de `CancellationToken`;
 - uso incorreto de `async/await`;
 - tratamento ruim de exceptions;
-- logs insuficientes;
-- problemas de performance;
-- problemas de seguranca;
-- acoplamento excessivo;
-- violacao de SOLID.
-
-## Seguranca e performance
-
-- Nao expor dados sensiveis.
-- Validar entrada e saida.
-- Evitar consultas desnecessarias e processamento redundante.
-- Priorizar clareza, manutencao e baixo risco de regressao.

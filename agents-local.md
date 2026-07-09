@@ -1,56 +1,38 @@
-# agents-local.md
+# AGENTS
 
-Este arquivo funciona como orquestrador local do projeto.
+Este arquivo e o orquestrador local do projeto.
 
-Use este arquivo quando o projeto consumir documentacao compartilhada, mas ainda precisar manter contexto proprio, regras locais e excecoes especificas.
+Ele aponta para a documentacao compartilhada em `docs-shared/` e para os arquivos locais deste repositorio.
 
-## Ordem de leitura recomendada
+`docs-shared/arquitetura.md` e `docs-shared/manutencao.md` sao obrigatorios em qualquer projeto que consumir esta documentacao.
 
-1. `docs-shared/estrutura.md`
-2. `docs-shared/manutencao.md`
-3. arquivo da stack usada em `docs-shared/`, como `react.md`, `python.md`, `csharp.md`, `flutter.md`, `sqlserver.md` ou `postgresql.md`
-4. `regrasnegocio.md`
-5. `arquitetura-local.md`
-6. outros arquivos locais relevantes para o projeto
-
-## Regras de precedencia
-
-- A documentacao compartilhada em `docs-shared/` define o padrao global.
-- Os arquivos locais do projeto definem contexto, excecoes e regras especificas deste repositorio.
-- Em caso de conflito, a regra local prevalece apenas para este projeto.
-
-## Objetivo do arquivo local
-
-- apontar a ordem correta de leitura;
-- indicar quais documentos compartilhados devem ser usados;
-- registrar quais arquivos locais complementam o padrao global;
-- evitar duplicacao desnecessaria da documentacao central.
-
-## Estrutura minima sugerida no projeto
-
-```txt
-meu-projeto/
-|-- docs-shared/
-|-- agents.md
-`-- restante do projeto
-```
-
-## Modelo base
-
-```md
-# agents.md
+Ele nao precisa ler todos os arquivos de `docs-shared`; deve ler obrigatoriamente a base comum e depois o arquivo da stack usada no projeto.
 
 Leia nesta ordem:
 
-1. `docs-shared/estrutura.md`
+1. `docs-shared/arquitetura.md`
 2. `docs-shared/manutencao.md`
-3. `docs-shared/react.md`
-4. `regrasnegocio.md`
-5. `arquitetura-local.md`
+3. arquivo da stack usada em `docs-shared/`
+4. arquivos locais do projeto, quando existirem
 
 Regras:
+
+- `docs-shared/arquitetura.md` e `docs-shared/manutencao.md` sao obrigatorios.
 - `docs-shared/` define o padrao global.
-- `regrasnegocio.md` define o dominio deste projeto.
-- `arquitetura-local.md` registra decisoes tecnicas especificas.
+- Os arquivos locais do projeto definem contexto especifico.
 - Em caso de conflito, a regra local prevalece neste repositorio.
+
+```
+
+Arquivos compartilhados disponiveis em `docs-shared/`:
+
+- `arquitetura.md`
+- `manutencao.md`
+- `react.md`
+- `csharp.md`
+- `python.md`
+- `flutter.md`
+- `sqlserver.md`
+- `postgresql.md`
+- `documentacao-para-uso.md`
 ```

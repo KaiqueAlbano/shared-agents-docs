@@ -1,44 +1,15 @@
 # React
 
-## Objetivo
+## Implementacao especifica
 
-Usar este guia para implementacao e revisao de interfaces em React com TypeScript ou JavaScript.
-
-## Checklist de pre-implementacao
-
-- Definir a responsabilidade do componente ou da tela.
-- Mapear props necessarias.
-- Mapear estados necessarios.
-- Identificar hooks necessarios.
-- Avaliar chamadas de API.
+- Definir responsabilidade do componente ou da tela.
+- Mapear props, estados e hooks necessarios.
+- Avaliar chamadas de API e sincronizacao de estado.
 - Cobrir `loading`, `error` e `empty state`.
-- Revisar responsividade.
-- Revisar acessibilidade.
-- Avaliar possibilidade de reutilizacao.
-- Verificar se ja existe componente semelhante.
+- Revisar responsividade e acessibilidade.
+- Validar tipagem TypeScript quando aplicavel.
 
-## Estrutura recomendada
-
-- Componentes em `components/`.
-- Hooks em `hooks/`.
-- Rotas em `routes/`.
-- Servicos em `services/`.
-- Paginas em `pages/`.
-- Utilitarios, constantes e contexto em suas pastas dedicadas.
-
-## Diretrizes de implementacao
-
-Antes de criar um componente ou tela, analisar:
-
-- responsabilidade unica;
-- estrutura de estado;
-- integracao com API;
-- validacoes;
-- comportamento em desktop, tablet e mobile;
-- impacto de performance;
-- acessibilidade e semantica.
-
-## Code review
+## Revisao especifica
 
 Ao revisar codigo React, verificar:
 
@@ -52,14 +23,6 @@ Ao revisar codigo React, verificar:
 - problemas de acessibilidade;
 - problemas de responsividade;
 - ausencia de `loading`, `error` ou `empty state`;
-- duplicacao de codigo;
 - oportunidade de extrair hook customizado;
 - problemas de tipagem em TypeScript;
 - inconsistencias entre codigo TypeScript e JavaScript.
-
-## Seguranca e performance
-
-- Evitar expor dados sensiveis no cliente.
-- Validar entradas de formularios.
-- Reduzir renderizacoes e chamadas duplicadas.
-- Priorizar componentes claros, reutilizaveis e escalaveis.

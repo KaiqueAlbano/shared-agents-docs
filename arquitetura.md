@@ -1,4 +1,4 @@
-# Estrutura do Projeto
+# Arquitetura do Projeto
 
 ## Estrutura obrigatoria
 
@@ -95,6 +95,7 @@ Prioridades: organizacao, manutencao, responsividade, escalabilidade, seguranca 
 ## Arquitetura obrigatoria
 
 Frontend:
+
 - Componentes em `components/`.
 - Hooks em `hooks/`.
 - Rotas em `routes/`.
@@ -102,6 +103,7 @@ Frontend:
 - Telas em `pages/`.
 
 Mobile Flutter:
+
 - Widgets em `widgets/`.
 - Telas em `pages/`.
 - Servicos em `services/`.
@@ -109,10 +111,78 @@ Mobile Flutter:
 - Configuracoes compartilhadas em `core/`.
 
 Backend:
+
 - Separar `controllers`, `services`, `repositories`, `routes`, `middlewares` e `config`.
 
 Banco:
+
 - Usar exclusivamente `.db/` por schema para todo SQL.
+
+## Comuns em linguagem
+
+### Papel dos arquivos de linguagem
+
+- `arquitetura.md` e `manutencao.md` formam a base obrigatoria de qualquer projeto que consumir esta documentacao.
+- Cada arquivo de linguagem deve conter apenas regras, padroes e particularidades tecnicas da stack.
+- Conteudos comuns entre linguagens devem ficar centralizados neste arquivo.
+- `manutencao.md` deve ser consultado para aprofundar debug, performance, testes e seguranca.
+
+### Filosofia e mentalidade de engenharia
+
+- Entender o problema antes de implementar.
+- Reutilizar solucao existente antes de criar nova abstracao.
+- Evitar duplicacao e acoplamento desnecessario.
+- Preferir clareza, manutencao e baixo risco de regressao.
+- Considerar impacto em arquitetura, dados, integracoes e operacao antes de alterar o codigo.
+
+### Estrutura padrao dos guias de linguagem
+
+Os guias de linguagem devem, quando fizer sentido, cobrir apenas:
+
+- particularidades tecnicas da stack;
+- cuidados de implementacao exclusivos;
+- pontos de revisao especificos da tecnologia;
+- observacoes operacionais da plataforma.
+
+### Fluxo comum de analise e planejamento
+
+Antes de implementar:
+
+- definir o objetivo da alteracao;
+- mapear arquivos, camadas, dependencias e integracoes afetadas;
+- verificar se ja existe implementacao parecida no projeto;
+- avaliar impacto em validacoes, testes, seguranca, performance e regressao;
+- dividir a execucao em etapas pequenas e coerentes.
+
+### Fluxo comum de implementacao
+
+Durante a implementacao:
+
+- manter responsabilidade bem definida por modulo, classe, componente ou rotina;
+- preservar a organizacao oficial de pastas e camadas;
+- manter nomes claros e consistentes;
+- evitar logica repetida e efeitos colaterais desnecessarios;
+- registrar contexto local apenas quando realmente houver regra especifica do projeto.
+
+### Fluxo comum de revisao
+
+Ao revisar alteracoes:
+
+- procurar duplicacao de codigo;
+- procurar responsabilidade excessiva;
+- revisar acoplamento indevido entre camadas;
+- validar tratamento de erro e pontos de entrada;
+- revisar legibilidade, manutencao futura e risco de regressao.
+
+### Convencoes de decisao
+
+Em caso de duvida entre alternativas, priorizar:
+
+1. menor duplicacao;
+2. menor acoplamento;
+3. maior clareza para manutencao;
+4. aderencia a estrutura oficial do projeto;
+5. menor risco operacional e de regressao.
 
 ## Regras para alteracao de objetos SQL
 
@@ -136,7 +206,7 @@ Antes de alterar qualquer `procedure`, `view`, `function` ou `table`:
 
 ## Checklist obrigatorio antes de finalizar alteracoes
 
-1. Consultei o `agents.md`.
+1. Consultei o `agents.md` local.
 2. Mantive a estrutura oficial de pastas.
 3. Evitei duplicacao de codigo.
 4. Nao quebrei funcionalidades existentes.
